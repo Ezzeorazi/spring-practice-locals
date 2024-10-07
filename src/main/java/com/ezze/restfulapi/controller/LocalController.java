@@ -4,6 +4,7 @@ package com.ezze.restfulapi.controller;
 import com.ezze.restfulapi.entity.Local;
 import com.ezze.restfulapi.error.LocalNotFoundException;
 import com.ezze.restfulapi.service.LocalService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,8 +42,9 @@ public class LocalController {
         return localService.findAllLocals();
     }
 
+
     @PostMapping("/savelocal")
-    public Local saveLocal(@RequestBody Local local){
+    public Local saveLocal(@Valid @RequestBody Local local){
         return localService.saveLocal(local);
     }
 
