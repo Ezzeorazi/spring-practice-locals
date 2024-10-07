@@ -19,5 +19,5 @@ public interface LocalRepository extends JpaRepository<Local, Long> {
     // Consulta ignorando mayusculas y minusculas
     Optional<Local> findByNameIgnoreCase(String name);
 
-    Local findLocalById(Long id);
+
 }
